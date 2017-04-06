@@ -1,12 +1,10 @@
-package domaineMetierTest;
+package domaineMetier;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.junit.Test;
-
-import domaineMetier.Contact;
 
 import static org.junit.Assert.assertEquals;
 
