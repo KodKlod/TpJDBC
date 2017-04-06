@@ -49,11 +49,12 @@
     	<artifactId>slf4j-jdk14</artifactId>
     	<version>1.7.24</version>
     </dependency>
-    <dependency>
-    	<groupId>ch.qos.logback</groupId>
-    	<artifactId>logback-classic</artifactId>
-    	<version>1.0.13</version>
-    </dependency>
+<!-- Je m'appuie uniquement sur SLF4J et java.util.logging -->
+<!--     <dependency> -->
+<!--     	<groupId>ch.qos.logback</groupId> -->
+<!--     	<artifactId>logback-classic</artifactId> -->
+<!--     	<version>1.0.13</version> -->
+<!--     </dependency> -->
     <!-- le scope "system"permet de déclarer du jar local(systemPath) --> 
     <!-- Mais il est préférable de créer un repo local Maven en créant un pom pour le jar en question-->
     <dependency>

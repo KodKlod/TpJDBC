@@ -1,14 +1,21 @@
 package domaineMetier;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 
 public class ContactTest {
+	// En plus des logs hibernate
+	// Je me crée un log spécifique de niveau info
+	private final static Logger LOGGER = LoggerFactory
+			.getLogger(ContactTest.class);
 
 	@Test
 	public void testRecupContactIDEgal1() {
@@ -22,6 +29,8 @@ public class ContactTest {
 		// Le .find répond au R du CRUD
 		// Voir pour les CUD ce qui est disponible
 		Contact contactRecupere = createEntityManager.find(Contact.class, 1L);
+
+		LOGGER.info("Nom du contact remonté : " + contactRecupere.getNomLname());
 
 		assertEquals(1, contactRecupere.getId());
 		assertEquals("Dave", contactRecupere.getPrenomFname());
