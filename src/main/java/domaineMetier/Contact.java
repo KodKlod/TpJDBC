@@ -27,7 +27,7 @@ public class Contact {
 	@Column(name = "AGE")
 	private int age;
 
-	
+
 	public Contact() {
 		
 	}
