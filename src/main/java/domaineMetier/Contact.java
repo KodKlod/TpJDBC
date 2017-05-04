@@ -37,7 +37,7 @@ public class Contact {
 		return id;
 	}
 
-	protected void setId(long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -45,7 +45,7 @@ public class Contact {
 		return prenomFname;
 	}
 
-	protected void setPrenomFname(String prenomFname) {
+	public void setPrenomFname(String prenomFname) {
 		this.prenomFname = prenomFname;
 	}
 
@@ -53,7 +53,7 @@ public class Contact {
 		return nomLname;
 	}
 
-	protected void setNomLname(String nomLname) {
+	public void setNomLname(String nomLname) {
 		this.nomLname = nomLname;
 	}
 
@@ -61,7 +61,7 @@ public class Contact {
 		return mail;
 	}
 
-	protected void setMail(String mail) {
+	public void setMail(String mail) {
 		this.mail = mail;
 	}
 
@@ -69,7 +69,7 @@ public class Contact {
 		return typeContact;
 	}
 
-	protected void setTypeContact(String typeContact) {
+	public void setTypeContact(String typeContact) {
 		this.typeContact = typeContact;
 	}
 
@@ -77,7 +77,7 @@ public class Contact {
 		return age;
 	}
 
-	protected void setAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
