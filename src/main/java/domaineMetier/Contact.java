@@ -1,8 +1,12 @@
 package domaineMetier;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity (name = "Contact") //Caractérise la classe Contact comme étant persistante
@@ -27,6 +31,17 @@ public class Contact {
 	@Column(name = "AGE")
 	private int age;
 
+	@OneToMany
+	@JoinColumn(name = "CONTACT_ID")
+	private Set<Hobbies> hobbies;
+
+	protected Set<Hobbies> getHobbies() {
+		return hobbies;
+	}
+
+	protected void setHobbies(Set<Hobbies> hobbies) {
+		this.hobbies = hobbies;
+	}
 
 	public Contact() {
 		

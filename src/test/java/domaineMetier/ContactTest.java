@@ -39,6 +39,10 @@ public class ContactTest {
 		assertEquals("friend", contactRecupere.getTypeContact());
 		assertEquals(46, contactRecupere.getAge());
 
+		assertEquals(2, contactRecupere.getHobbies().size());
+		// Et comment je fais pour comparer les valeurs de chacun des deux
+		// hobbies ?
+		//
 	}
 
 }
