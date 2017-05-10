@@ -5,11 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity(name = "Hobbies")
 // Caractérise la classe comme étant persistante
@@ -22,14 +19,19 @@ public class Hobbies {
 	// @GeneratedValue quand la clé ou la donnée est générée par la base
 	@Column(name = "ID")
 	private long id;
-	@Column(name = "SINCE")
-	@Temporal(TemporalType.DATE)
+	@Transient
+	/*
+	 * @Column(name = "SINCE")
+	 * 
+	 * @Temporal(TemporalType.DATE)
+	 */
 	private Date depuis;
 	@Column(name = "HOBBY", length = 100)
 	private String activite;
 
-	@ManyToOne
-	@JoinColumn(name = "CONTACT_ID")
+	@Transient
+	// @ManyToOne
+	// @JoinColumn(name = "CONTACT_ID")
 	private Contact contact;
 
 	protected long getId() {
