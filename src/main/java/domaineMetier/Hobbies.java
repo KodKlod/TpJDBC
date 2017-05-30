@@ -50,7 +50,7 @@ public class Hobbies {
 		this.depuis = depuis;
 	}
 
-	protected String getActivite() {
+	public String getActivite() {
 		return activite;
 	}
 
@@ -67,7 +67,11 @@ public class Hobbies {
 	}
 
 	public Hobbies() {
-		// TODO Auto-generated constructor stub
+	}
+
+	public Hobbies(long id, String activite) {
+		this.id = id;
+		this.activite = activite;
 	}
 
 }

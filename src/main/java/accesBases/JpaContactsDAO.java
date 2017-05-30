@@ -5,22 +5,34 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import domaineMetier.Contact;
 
 public class JpaContactsDAO implements IContactsDAO {
 
 	public JpaContactsDAO() {
-		// TODO Auto-generated constructor stub
+
 	}
 
+
+
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> trouverEmailDesContactsParType(String type)
 			throws Exception {
+		String rechParTypeContact = "Select a.mail from Contact a "
+				+ " where a.typeContact=?1 ";
 		EntityManager createEntityManager = getEntityManager();
-		Contact contactRecupere = createEntityManager.find(Contact.class, type);
-		contactRecupere.getMail();
-		return null;
+
+		TypedQuery<String> maQuery = (TypedQuery<String>) createEntityManager
+				.createQuery(rechParTypeContact);
+		// Query maQuery = createEntityManager.createQuery(rechParTypeContact);
+		maQuery.setParameter(1, type);
+
+		List<String> list = maQuery.getResultList();
+
+		return list;
 	}
 
 	@Override

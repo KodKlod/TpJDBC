@@ -5,8 +5,9 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity (name = "Contact") //Caractérise la classe Contact comme étant persistante
 // Le nom de l'entity par défaut est celui de la classe
@@ -30,26 +31,22 @@ public class Contact {
 	@Column(name = "AGE")
 	private int age;
 
-	@Transient
-	/*
-	 * @OneToMany
-	 * 
-	 * @JoinColumn(name = "CONTACT_ID")
-	 */
+	// @Transient
+	@OneToMany
+	@JoinColumn(name = "CONTACT_ID")
 	private Set<Hobbies> hobbies;
 
-	protected Set<Hobbies> getHobbies() {
+	public Contact() {
+
+	}
+
+	public Set<Hobbies> getHobbies() {
 		return hobbies;
 	}
 
-	protected void setHobbies(Set<Hobbies> hobbies) {
+	public void setHobbies(Set<Hobbies> hobbies) {
 		this.hobbies = hobbies;
 	}
-
-	public Contact() {
-		
-	}
-	
 
 	public long getId() {
 		return id;
@@ -97,13 +94,6 @@ public class Contact {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }
