@@ -25,6 +25,7 @@ public class JpaContactsDAO implements IContactsDAO {
 				+ " where a.typeContact=?1 ";
 		EntityManager createEntityManager = getEntityManager();
 
+		// TypedQuery permet de préciser le type de résultat obtenu
 		TypedQuery<String> maQuery = (TypedQuery<String>) createEntityManager
 				.createQuery(rechParTypeContact);
 		// Query maQuery = createEntityManager.createQuery(rechParTypeContact);
